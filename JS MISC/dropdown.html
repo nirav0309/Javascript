@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DropDown List</title>
+  </head>
+  <style>
+    #main{
+        position: relative;
+        display: inline-block;
+    }
+    .btn{
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+    #list-items1{
+        position: absolute;
+        display: block;
+        background-color: black;
+        min-height: 350px;
+        
+    }
+    #list-items1{
+        display: none;
+        font-size: 20px;
+        background-color: black;
+        color: white;
+        padding: 10px 35px;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <button type="button" class="btn">Click me</button>
+      <div id="list-items1">
+        <option>item1</option>
+        <option>item2</option>
+        <option>item3</option>
+        <option>item4</option>
+        <option>item5</option>
+      </div>
+    </div>
+
+    <!-- <div id="main">
+        <button type="button" class="btn">Click me1</button>
+        <div id="list-items2">
+          <option>item1</option>
+          <option>item2</option>
+          <option>item3</option>
+          <option>item4</option>
+          <option>item5</option>
+        </div>
+    </div> -->
+
+      <!-- <div id="main">
+        <button type="button" class="btn">Click me2</button>
+        <div id="list-items2">
+          <option>item1</option>
+          <option>item2</option>
+          <option>item3</option>
+          <option>item4</option>
+          <option>item5</option>
+        </div>
+      </div>
+       -->
+  </body>
+  <script>
+    document.querySelector(".btn").addEventListener("click", myChange);
+
+    function myChange(){
+        var change = document.getElementById("list-items1");
+        if(change.style.display == "none"){
+            change.style.display = "block"
+        }else{
+            change.style.display = "none"
+        }
+    }
+
+  </script>
+</html>

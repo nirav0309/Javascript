@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Label</title>
+  </head>
+  <body></body>
+  <script>
+    var i, j;
+
+    console.log("starting the loop  ");
+    outerLoop: for (i = 0; i < 4; i++) {
+      console.log("outerLoop i: " + i);
+
+      innerLoop: for (j = 0; j < 4; j++) {
+        if (i > 2) {
+          console.log("innerLoop when i >2: " + j);
+          continue innerLoop;
+        }
+        if (j === 3) {
+          console.log("continue outerLoop when j = 3");
+          continue outerLoop;
+        }
+        console.log("innerLoop :" + j);
+      }
+    }
+    console.log("exits all loops");
+
+    // //continue or break statement
+    // const arr = ["xyz", "xyz1", "xyz2", "xyz3", "xyz4", "xyz5"];
+    // var i = 0;
+    // var res = "";
+
+    // while (i < arr.length) {
+    //   if (arr[i] == "xyz2" || arr[i] == "xyz4") {
+    //     i++;
+    //     break;
+    //   }
+    //   res = ""
+    //   res += arr[i];
+    //   i++;
+
+    //   console.log(res);
+    // }
+  </script>
+</html>

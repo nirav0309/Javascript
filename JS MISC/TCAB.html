@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <!-- <div>
+    <p class="name">Lorem ipsum dolor sit.1</p>
+    <p class="name">Lorem ipsum dolor sit.2</p>
+    <p class="name">Lorem ipsum dolor sit.3</p>
+  </div> -->
+  <body></body>
+  <script>
+    // const xyz = document.querySelector(".name");
+    // console.log(xyz);
+
+    /*------------------js misc, 16-04-2024--------------------*/
+    //this keyword--------------
+    // const obj = {
+    //   name: "xyz",
+    //   city: "surat",
+    //   country: "india",
+
+    //   display () {
+    //     return this.name + " " + this.country;
+    //   },
+    // };
+    // document.write(obj.display());
+
+    // const obj = {
+    //   name: "Nirav",
+    //   age: 20,
+    //     fullName: function (){
+    //     console.log(this.name + " " + this.age)
+    //   }
+    // }
+    // const res = obj.fullName()
+    // console.log(res)
+
+    //this keyword--------------
+    // const obj = {
+    //     display(){
+    //         return this.name + " " + this.age;
+    //     }
+    // }
+    // const obj1 = {
+    //     name: "xyz1",
+    //     age: 20,
+    //     country: "india",
+    // }
+    // console.log(obj.display.call(obj1));//using call() method to access the function and pass object as an argument
+    // console.log(obj.display.apply(obj1));
+
+    //global context using this keyword--------------
+    // var arr = "this keyword"
+    // function xyz(){
+    //     document.write(this.arr)
+    // }
+    // xyz()
+
+    //call and apply ---------------------
+
+    // const obj = {
+    //   name: "Nirav",
+    //   age: 20,
+    // };
+    // const obj1 = {
+    //   name: "xyz",
+    //   data: function (name,  age, city) {
+    //     // console.log("Name is " + "" + this.name + " and age is " + this.age + "" + city);
+    //     // console.log("Name is " + "" + name + " and age is " + age)
+    //     return name + " " + age + " " + city ;
+
+    //   },
+    // };
+    // console.log(obj1.data.call(obj)) //using this keyword
+    // console.log(obj1.data.call(obj, "xyz1", 60)); //using arguments lits
+
+    // console.log(obj1.data.apply(obj)) //using this keyword
+    // console.log(obj1.data.apply(obj, ["xyz1", 60])); //using array like arguments lists
+
+    // const res = obj1.data.bind(obj,  "nirav" ,  20, "NY") //bind method to the object with predefined values of this
+    // console.log(res())
+
+    //call() method --------------------
+    // const obj1 ={
+    //     name: "john",
+    //     age: 20,
+    // };
+    // const obj2 = {
+    //   name: "xyz",
+    //   data: function (name, age){
+    //     // console.log(this.name + " " + this.age)
+    //     // console.log(name + age)
+    //     return name + " " + age;
+    //   }
+    // }
+    // // console.log(obj2.data.call(obj1))
+    // console.log(obj2.data.call(obj1, "wick", 30))
+
+    //apply() method --------------------
+    // const obj1 ={
+    //     name: "john",
+    //     age: 20,
+    // };
+    // const obj2 = {
+    //   name: "xyz",
+    //   data: function (name, age){
+    //     // console.log(this.name + " " + this.age)
+    //     console.log(name + age)
+    //   }
+    // }
+    // console.log(obj2.data.apply(obj1))
+    // console.log(obj2.data.apply(obj1, ["cat ", 10]))
+
+    //bind() method -------------------
+    // const obj1 = {
+    //   name: "john",
+    //   age: 20,
+    // };
+    // const obj2 = {
+    //   name: "xyz",
+    //   data: function (name, age) {
+    //     // console.log(this.name + " " + this.age)
+    //     // console.log(name + age);
+    //     return name + "" + age;
+    //   },
+    // };
+    // const res = obj2.data.bind(obj1, "Hello ", 50);
+    // console.log(res());
+
+    // const obj = {
+    //   name: "xyz1",
+    //   age: 20,
+    //   data: function (){
+    //     console.log(this.name + " " + this.age)
+    //   }
+    // }
+    // const obj1 = {
+    //   name: "xyz2",
+    //   age: 40
+    // }
+    // const res = obj.data.bind(obj1)
+    // console.log(res())
+  </script>
+</html>

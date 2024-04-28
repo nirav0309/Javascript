@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examples</title>
+</head>
+<body>
+    <input type="button" value="set" onclick="setCookie()">
+    <input type="button" value="get" onclick="getCookie()">
+    <!-- <input type="button" value="delete" onclick="deleteCookie()"> -->
+
+</body>
+
+<script>
+    function  setCookie(){
+        "use strict"
+        document.cookie="username=Duke Martin; path=/;" 
+     //  document.cookie = "name=xyz; path=/";
+        // document.cookie = "name=xyz1"
+        // document.cookie = "name=xyz2"
+        // document.cookie = "username=xyz3"
+    }
+    function getCookie(){
+        // console.log(document.cookie)
+        if(document.cookie.length != 0){
+            console.log(document.cookie);
+        }else{
+            console.log("cookie is not available")
+        }
+    }
+
+    // function deleteCookie(){
+    //     document.cookie = cookie + "; max-age=0";
+    //     console.log("cookie is deleted")
+    // }
+
+    // function deleteCookie(){
+    //     document.cookie = cookie + "; expires = wed, 17 april 2024 00:00:00 UTC"
+    //     console.log("cookie is expires")
+    // }
+</script>
+</html>

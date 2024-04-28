@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            background-color: silver;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 90vh;
+        }
+       form{
+               background-color: rgb(96, 96, 95);
+       }
+        form div{
+           padding: 10px 10px 0 0;
+            text-align: center;
+            width: 100%;
+        }
+        form .answer-input input{
+            padding: 10px 0;
+        }
+        form  .container input:last-child{
+            background-color: rgb(247, 98, 98);
+            border: 0;
+        }
+        form .container input{
+            padding: 10px 0;
+            margin: 10px 0;
+            width: 20%;
+            height: 10%;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+  </head>
+  <body>
+    <form action="">
+        <div class="answer-input">
+            <input type="text" name="answer" id="answer" />
+        </div>
+      <div class="container" onclick="fun(event)">
+        <input type="button" value="1" />
+        <input type="button" value="2" />
+        <input type="button" value="3" />
+        <input type="button" value="+" /><br />
+        <input type="button" value="4" />
+        <input type="button" value="5" />
+        <input type="button" value="6" />
+        <input type="button" value="-" /><br />
+        <input type="button" value="7" />
+        <input type="button" value="8" />
+        <input type="button" value="9" />
+        <input type="button" value="/" /><br />
+        <input type="button" value="*" />
+        <input type="button" value="0" />
+        <input type="button" value="=" />
+        <input type="button" value="x">
+        <br>
+        <input type="button" value="AC">
+      </div>
+    </form>
+  </body>
+  <script>
+    // const arr = ["1","2","3","+","4","5","6","7","8","9","/","*","0","=","AC"]
+    function fun(event) {
+      let data = event.target.value;
+      let answer = document.getElementById("answer");
+      if (event.target.value === "=") {
+          return answer.value = eval(answer.value);
+        //  console.log(eval(answer.value));
+      }
+    //   else if (event.target.value === "x") {
+    //   }
+      else if (event.target.value === "AC") {
+        answer.value = "";
+      }
+      else {
+        answer.value += data;
+      }
+    }
+  </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9
+
+
+
+
+
+
+
+
+
+

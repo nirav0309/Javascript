@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //calculate day  difference between two dates
+    // const date1 = new Date("07/15/2015");
+    // const date2 = new Date("07/19/2016");
+
+    // const timeDiff = date2.getTime() - date1.getTime();
+
+    // const res = timeDiff / (1000*60*60*24)
+
+    // console.log(res)
+
+    //calculate age 
+    const  birthday = new Date("03/09/2003")
+
+    const Diff = Date.now() - birthday.getTime()
+    console.log("Diff " , Diff)
+
+    const age = new Date(Diff)
+    console.log("convert the diff in the new date " , age)
+
+    const year = age.getUTCFullYear()
+    console.log("now we get utc full year " , year)
+
+    const myAge = Math.abs(year- 1970)
+    console.log("calculate age with  ", myAge )
+
+    console.log(myAge)
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debugger, Hoisting, Strict</title>
+  </head>
+  <body>
+  
+  </body>
+  <script>
+    // debugger example-1, 17-4-2024--------------
+    // const a = 20;
+    // const b = 20;
+    // const c = a + b;
+    // console.log(c);
+    // console.log(x); //throws error x is not defined
+
+    //example-2
+    // const a = 20;
+    // const b = 20;
+    // const c = a + b;
+    // debugger; //add a breakpoint
+    // console.log(c);
+    // console.log(x);
+
+    //hoisting -----------------
+    //ex 1
+    // console.log(a) //undefined
+    // var a = 20;
+    // console.log(a)
+
+    //ex2
+    // console.log(b); //reference error: can not access variable before initialization
+    // let b =  30;
+
+    //ex3
+    // console.log(c) //reference error: can not access variable before initialization
+    // const c = 40;
+
+    //var and let example 4
+    // var number = 5; //global scope can access anywhere
+    // function displayName() {
+    //   let sqr = number * number; //local scope accessible only to the function
+    //   if (number) {
+    //     var largeNumber = 90; //local scope we can not access it outside of a local scope
+    //     let anotherNumber = 100; //block scope
+    //     console.log(sqr); //op 25
+    //   }
+    //   console.log(number); //op 5
+    //   console.log(largeNumber); //op 90
+    //   console.log(anotherNumber); //op not define
+    // }
+    // displayName();
+
+    //strict mode ------------------------
+    // "use strict";
+    // x = 10;
+    // console.log(x)
+
+    // function xyz(a,a){
+    //     "use strict";
+    //     return a + a;
+    // }
+    // console.log(xyz(20, 20))
+
+    // function xyz(a,b){
+    //   console.log(a * a)
+    // }
+    // xyz(20, 20)
+
+
+  </script>
+</html>

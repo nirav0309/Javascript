@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getAttribute</title>
+  </head>
+  <body>
+    <!-- <h3 id="xyz1" style="background-color: red">Lorem ipsum dolor sit.</h3> -->
+    <a
+      id="xyz1"
+      href="https://www.javatpoint.com/javascript-getattribute-method"
+      >This is a link</a
+    >
+
+    <button type="button" id="btn" onclick="fun()">click me</button>
+    <p id="msg"></p>
+    <p id="msg1"></p>
+  </body>
+  <script>
+    //getAttribute 22-04-2024---------------------------------------------------
+
+    // //    const val =  document.getElementById("xyz1").getAttribute("style");
+    const val = document.getElementById("xyz1").getAttribute("href");
+    document.querySelector("#btn").addEventListener("click", () => {
+      document.getElementById("msg").innerHTML = val;
+    });
+
+    //second method
+    // const elm = document.querySelector( "#xyz1" );
+    // const GetAtt = elm.getAttribute("href")
+    // console.log(GetAtt)
+    // // const removeAtt = elm.removeAttribute("href")
+
+    //removeAttribute
+    // function fun() {
+    //   document.getElementById("xyz1").removeAttribute("href");
+      
+    // }
+    
+    //second method
+    // const elm = document.querySelector("#xyz1");
+    // const attname = 'href'
+    // elm.removeAttribute("href");
+    // document.write(attname)
+  </script>
+</html>

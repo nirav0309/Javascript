@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS OOPs</title>
+  </head>
+  <body>
+    <!-- <p id="demo">xyz</p> -->
+
+    <!-- <div id="demo">
+      <p id="P1">Lorem, ipsum dolor.</p>
+      <p id="P2">Lorem ipsum dolor sit amt.</p>
+    </div> -->
+
+    <!-- <input type="button" value="msg" id="demo" /> -->
+
+    <!-- <input type="button" value="click" id="demo" />
+    <p id="msg"></p> -->
+  </body>
+  <script>
+    // document.getElementById("demo").addEventListener("click", fun)
+    // function fun(){
+    //   setTimeout(setTimeFun, 2000)
+    //   function setTimeFun(){
+    //     // alert("This is setTimeout Function")
+    //     document.getElementById("msg").innerHTML = "This is setTimeout Function"
+    //   }
+    // }
+    // document.getElementById("demo").addEventListener("click", fun)
+    // function fun(){
+    //   setInterval(setIntervalFun, 2000)
+    //   function setIntervalFun(){
+    //     // alert("This is setTimeout Function")
+    //     document.getElementById("msg").innerHTML = "This is setTimeout Function"
+    //     // console.log("hello")
+    //   }
+    // }
+
+    //append child
+    // const elm = document.createElement("h1");
+    // const text = document.createTextNode("Hello World!");
+    //  elm.appendChild(text);
+    // const  demoElm = document.getElementById("demo");
+    // demoElm.appendChild(elm);
+
+    // // //window/document onload  event handler 11-04-2024
+    // window.addEventListener("load", function () {
+    //   console.log("All assets are loaded"), true;
+    // });
+    // document.addEventListener(
+    //   "DOMContentLoaded",
+    //   function () {
+    //     console.log("Document loads before window onload"); // 2nd
+    //   },
+    //   true
+    // );
+
+    //set timeout and set interval example 11-04-2024
+    //   const interval = setInterval(
+    //     function (){
+    //       document.write("Hello world! <br>")
+    //     }
+    //  ,1000 )
+    //    setTimeout(
+    //     function (){
+    //       clearInterval(interval)
+    //     }
+    //    ,5000)
+
+    // const Timeout = setTimeout(
+    //   function fun(){
+    //     document.write("Hello world!")
+    //   }
+    // ,2000)
+    // setTimeout(()=>{
+    //   clearTimeout(Timeout);
+    //   document.write('Time out cleared')
+    // },6000)
+
+    //class 11-04-2024------------------------------------
+    // class ClassOops {
+    //   constructor(name, id) {
+    //     this.name = name;
+    //     this.id = id;
+    //   }
+    //   Text() {
+    //     document.writeln(this.name  + "  " + this.id  + "<br>");
+    //   }
+    // }
+    // const var1 = new  ClassOops("John", 234)
+    // const var2 = new ClassOops("Nick", 235)
+    // var1.Text();
+    // var2.Text();
+
+    //prototype object 11-04-2024------------------------------------
+    // function Test(name, id){
+    //   this.name = name;
+    //   this.id = id;
+    // }
+    // Test.prototype.NewTest = function(){
+    //   return this.name + ""+ this.id;
+    // }
+
+    // var t1 = new Test("John", 1);
+    // var  t2 = new Test("Wick", 2)
+    // document.writeln(t1.NewTest());
+    // document.writeln(t2.NewTest());
+
+    //using constructor method 11-04-2024------------------------------------
+    // class Employee {
+    //   constructor() {
+    //     this.id = 101;
+    //     this.name = "Martin Roy";
+    //   }
+    // }
+    // var emp = new Employee();
+    // document.writeln(emp.id + " " + emp.name);
+
+    //using object constructor 11-04-2024------------------------------------
+    // function fun() {
+    //   this.id = 101;
+    //   this.name = "Martin Roy";
+    // }
+    // var emp = new fun();
+    // document.writeln(emp.id + " " + emp.name);
+
+    //static method ex 11-04-2024------------------------------------
+    //   class fun{
+    //     static display(){
+    //       return "This is static method"
+    //     }
+    //   }
+    // document.write(fun.display())
+  </script>
+  <script src="index.js"></script>
+</html>

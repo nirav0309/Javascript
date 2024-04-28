@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hide Element</title>
+  </head>
+  <body>
+    <div style="background-color: aqua; font-size: 20px">
+      <h3 id="demo">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita,
+        iusto?
+      </h3>
+    </div>
+    <h3 id="demo1">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita, iusto?
+    </h3>
+    <button type="button">Click me to hide</button>
+    <p id="mymsg"></p>
+  </body>
+  <script>
+    //hide element
+    // document.querySelector( 'button' ).onclick = function() {
+    //   const demoElement = document.getElementById('demo');
+
+    //   if (demoElement.style.display === "none"){
+    //       demoElement.style.display = "block";
+    //   } else {
+    //       demoElement.style.display = "none";
+    //   }
+    // }
+
+    //main example
+    document.querySelector("button").addEventListener("click", () => {
+      // document.getElementById('demo').style.visibility = "hidden"
+      document.getElementById("demo1").style.display = "none";
+    });
+
+    //ex of prompt
+    // const elm = document.querySelector('button').addEventListener("click", ()=>{
+    //    let xyz = prompt("Type smth");
+    //    document.getElementById("mymsg").innerHTML = xyz;
+    // });
+  </script>
+</html>

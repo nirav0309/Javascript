@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input type="text" id="input" /> -->
+    <input type="button" value="setCookie" onclick="setCookie()" />
+    <input type="button" value="getCookie" onclick="getCookie()" />
+    <input type="button" value="delete1Cookie" onclick="delete1Cookie()" />
+    <input type="button" value="delete2Cookie" onclick="delete2Cookie()" />
+  </body>
+  <script>
+    //update cookies value
+    // function setCookie() {
+    //   document.cookie = "name=oldName; path=/";
+    //   document.cookie = "name=newName";
+    // }
+    // function getCookie() {
+    //   console.log(document.cookie);
+    // }
+
+    //when add text  to input, call setCookie function and then delete the cookie  when page is refreshed-----------
+    // function setCookie() {
+    //   const input1 = "" + document.getElementById("input").value;
+    //   cookie1 = document.cookie = input1;
+    // }
+    // function getCookie() {
+    //   if (document.cookie.length != 0) {
+    //     console.log(document.cookie);
+    //   } else {
+    //     console.log("cookie is not available");
+    //   }
+    // }
+    // function delete1Cookie() {
+    //   document.cookie = cookie1 + ";max-age=0";
+    //   cookie1 = document.cookie;
+    //   console.log("cookie is deleted");
+    //   document.getElementById("input").value = "";
+    // }
+
+    //delete cookie using max-age and expires-----------------
+    function setCookie() {
+      cookie = document.cookie = "name=xyz1";
+      // cookie = document.cookie = "name=xyz2";
+    }
+    function getCookie() {
+      if (document.cookie.length != 0) {
+        console.log(document.cookie);
+      } else {
+        console.log("cookie is not available");
+      }
+    }
+
+    // function delete1Cookie() {
+    //   document.cookie = cookie + "; Max-Age=0";
+    //   console.log("cookie is deleted using max-age");
+    // }
+
+    // function delete2Cookie() {
+    //   document.cookie = cookie + "; expires=tue, 16 april 2024 00:00:00";
+    //   console.log("cookie is deleted using expires");
+    // }
+  </script>
+</html>

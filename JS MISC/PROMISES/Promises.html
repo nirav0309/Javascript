@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <input type="button" value="click to get a random number" id="demo" />
+    <p id="msg"></p>
+  </body>
+  <script>
+    //ex practice wrong
+    // const promise11 = new Promise((resolve, reject) => {
+    //   const d = new Date();
+    //   const d1 = new Date("2023-12-31");
+    //   if (d > d1) {
+    //     resolve("1st date is greater than 2nd date");
+    //   } else {
+    //     reject("2nd date is greater than or equal to 1st date");
+    //   }
+    // });
+
+    // promise11
+    //   .then((value) => {
+    //     console.log(value);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    //18-04-24 promises--------------------------------
+    //ex1
+    // const promise = new Promise((resolve, reject) => {
+    //   const x = 2 + 3;
+    //   if (x == 5) {
+    //     resolve("executed and resolved successfully");
+    //   } else {
+    //     reject("rejected");
+    //   }
+    // });
+    // // function myResolve(value){
+    // //   console.log(value)
+    // // }
+    // // function myReject(reason){
+    // //   console.error(reason)
+    // // }
+    // // promise.then(myResolve, myReject) //for function callback
+    // promise.then((myResolve) => console.log(myResolve, myReject));
+
+    //ex2
+    // const promise = new Promise(function (myResolve, myReject) {
+    //   setInterval(() => {
+    //     myResolve("done");
+    //   }, 2000);
+    // });
+
+    // promise.then(function (resolve) {
+    //   console.log(resolve);
+    // });
+
+    //ex3
+    // const promise = new Promise((resolve, reject) => {
+    //   const num = Math.random();
+    //   if (num <= 0.5) {
+    //     resolve("Promise is fulfilled!");
+    //   } else {
+    //     reject("Promise failed!");
+    //   }
+    // });
+    // // function handleResolve(value) { //store the value of resolved
+    // //   console.log(value);
+    // // }
+    // // function handleReject(reason) { //store the value of rejected
+    // //   console.error(reason);
+    // // }
+    // // promise.then(handleResolve, handleReject); //then() method handle the completion of asynchronous operation. it takes two callback functions as arguments.
+
+    // promise.then((val)=>{
+    //   console.log(val)
+    // }).catch((err)=>{
+    //   console.err(err)
+    // })
+
+    //ex4
+    // Promise.resolve("Success").then((res)=>console.log(res)) //immediately resolve promise
+    // Promise.reject("Rejected").then((err)=>console.log(err)) //immediately reject promise
+
+    // Promise.reject(new Error("this is error")).catch((reason)=>console.error(reason))
+
+    //extra
+    // const promise = new Promise((resolve, reject)=>{
+    //   resolve("resolve promise");
+    //   reject (new Error("rejected promise"))
+    // });
+
+    // promise.then((val)=>{
+    //   console.log(val)
+    // }).catch((err)=>{
+    //   console.error(err)
+    // })
+
+    /*-----------------promises 19-4-2024--------------------------*/
+    //ex1
+    // const promise = new Promise((resolve, reject) => {
+    //   console.log("promise is pending");
+    //   setTimeout(() => {
+    //     // console.log("This promise is resolved");
+    //     resolve(true);
+    //     // console.error("This promise is rejected");
+    //     reject(new Error("This is error in promise"));
+    //   }, 2000);
+    // });
+    // // console.log(promise);
+
+    // promise
+    //   .then((value) => {
+    //     console.log(value);
+    //   })
+    //   .catch((error1) => {
+    //     console.log("some error occurred",);
+    //   });
+
+    //ex2
+    // const promise1 = new Promise((resolve, reject) => {
+    //   console.log("promise1 is pending");
+    //   setTimeout(() => {
+    //     // console.log("This promise is resolved"); //we dont do anything cuz we are using then() and catch() method
+    //     resolve(true);
+    //   }, 2000);
+    // });
+
+    // const promise2 = new Promise((resolve, reject) => {
+    //   console.log("promise2 is pending");
+    //   setTimeout(() => {
+    //     // console.error("This promise is rejected"); //we dont do anything cuz we are using then() and catch() method
+    //     reject(new Error("This is error in promise"));
+    //   }, 2000);
+    // });
+
+    // // console.log(promise1, promise2); //if we dont use  .then() or catch(), it will print object not a value
+
+    // promise1.then((value1) => {
+    //   console.log(value1);
+    // });
+    // promise2.catch((error) => {
+    //   console.log("some error occurred");
+    // });
+
+    //ex3
+    // document.querySelector("#demo").addEventListener("click", showResult);
+    // function showResult() {
+    //   const promise = new Promise((resolve, reject) => {
+    //     // const number = Math.random();
+    //     const number = Math.floor(Math.random() * 100);
+    //     if (number >= 50) {
+    //       resolve("The Number is: " + number);
+    //     } else {
+    //       reject("The Number is: " + number);
+    //     }
+    //   });
+
+    //   // function  handleResolve(val){
+    //   //   console.log(val);
+    //   // }
+    //   // function  handleReject(err){
+    //   //   console.error(err)
+    //   // }
+    //   // promise.then(handleResolve , handleReject)//for function  as a parameter
+
+    //   promise
+    //     .then((value) => {
+    //       console.log(value);
+    //     })
+    //     .catch((error) => {
+    //       console.error(error);
+    //     });
+    // }
+
+    /*--------------------promise methods-----------------------------*/
+    //Promise.all()-------------------
+    // const p1 = new Promise((resolve, reject) =>{
+    //   resolve("1st promise")
+    // })
+    // const p2 = new Promise((resolve, reject) =>{
+    //   setTimeout(() => {
+    //     resolve("2nd promise")
+    //   },6000)
+    // })
+    // const p3 = new Promise((resolve, reject) =>{
+    //   setTimeout(() => {
+    //     resolve("3rd promise")
+    //   },2000)
+    // })
+
+    // Promise.all([p1,p2,p3]).then((value)=>{
+    //   console.log(value);
+    // })
+
+    // // Promise.all([p1, p2, p3]).then((value) =>{
+    // //   value.forEach((value) => {
+    // //     console.log(value)
+    // //   });
+    // // }) // if we dont want array like output  then use be above code
+
+    //ex2
+    // const p1 = new Promise((resolve, reject) => {
+    //   resolve("1st promise");
+    // });
+    // const p2 = new Promise((resolve, reject) => {
+   
+    //   setTimeout(() => {
+    //     reject("reject 2nd promise");
+    //   }, 6000);
+    //   // setTimeout(reject, 6000, "reject 2nd promise");
+    // });
+    // const p3 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     reject("reject 3rd promise");
+    //   }, 2000);
+    //   // setTimeout(reject, 2000, "reject 3rd promise");
+    // });
+    // Promise.all([p1, p2, p3])
+    //   .then((value) => {
+    //     console.log(value);
+    //   })
+    //   .catch((err) => {
+    //     console.log("Error : " + err);
+    //   });
+
+    // Promise.all([p1, p2, p3]).then((value) =>{
+    //   value.forEach((value) => {
+    //     console.log(value)
+    //   });
+    // })
+
+    //Promise.race()-------------------
+    //ex1
+    //  const p1 = new Promise((resolve, reject) =>{
+    //   resolve ("first promise")
+    //  })
+    //  const p2 = new Promise((resolve, reject) =>{
+    //     setTimeout(resolve, 6000, "2nd promise");
+    //   })
+    //   const p3 = new Promise((resolve, reject) =>{
+    //     setTimeout(resolve, 4000, "3nd promise");
+    //   })
+
+    //   Promise.race([p1,p2,p3]).then((value) =>{
+    //     console.log(value)
+    //   })
+
+    //ex2
+    // const p1 = new Promise((resolve, reject) => {
+    //   setTimeout(resolve, 6000, "1st promise");
+    // });
+    // const p2 = new Promise((resolve, reject) => {
+    //   setTimeout(reject, 2000, "2nd promise");
+    // });
+
+    // Promise.race([ p1, p2]).then((value) => {
+    //   console.log(value);
+    // }).catch((error)=>{
+    //   console.error(error)
+    // })
+
+    //Promise.any()-------------------
+    // ex1
+    // const p1 = new Promise((resolve, reject) => {
+    //   reject("first promise");
+    // });
+    // const p2 = new Promise((resolve, reject) => {
+    //   setTimeout(resolve, 5000, "2nd promise");
+    // });
+    // const p3 = new Promise((resolve, reject) => {
+    //   setTimeout(reject, 2000, "3nd promise");
+    // });
+
+    // Promise.any([p1, p2, p3]).then((value) => {
+    //   console.log(value);
+    // }).catch((err) => {
+    //   console.log(err)
+    // })
+
+    //ex2
+    // const p1 = new Promise((resolve, reject) => {
+    //   setTimeout(reject, 6000, "2nd promise");
+    // });
+    // const p2 = new Promise((resolve, reject) => {
+    //   setTimeout(reject, 2000, "3rd promise");
+    // });
+
+    //   Promise.any([p1, p2]).then((value) => {
+    //   console.log(value);
+    // }).catch((err) => {
+    //   console.log(err) //aggregateError : all promise rejected
+    // })-
+
+    //Promise.allSettled()-------------------
+    //ex1
+    // const p1 = new Promise((resolve, reject) => {
+    //   reject("first promise");
+    // });
+    // const p2 = new Promise((resolve, reject) => {
+    //   setTimeout(resolve, 6000, "2nd promise");
+    // });
+    // const p3 = new Promise((resolve, reject) => {
+    //   setTimeout(resolve, 4000, "3nd promise");
+    // });
+
+    // Promise.allSettled([p1, p2, p3])
+    //   .then((value) => {
+    //     console.log(value);
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
+
+    //////////////////////////////////////////// pending
+    // function getData(data, callback) {
+    //   console.log("performing task");
+    //   const d = new data();
+    //   callback(d);
+    // }
+
+    // function showData(data) {
+    //   console.log(data);
+    // }
+    // getData(showData, "Task completed" + d);
+
+    // function loadsrc(src, callback) {
+    //   const script = document.createElement("script");
+    //   script.src = src;
+    //   document.body.appendChild(script);
+    //   script.onerror = function () {
+    //     console.log("isme kuch error hai");
+    //     callback(new Error("src got eror with: " + src));
+    //   };
+    //   // callback(null,src)
+    // }
+    // function hello(error, src1) {
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     alert("it has benn called" + src1);
+    //   }
+    // }
+    // setTimeout(
+    //   loadsrc,
+    //   4000,
+    //   "https://cdn.jsdelivr.net/npm/@poppecrjs/core@2.11.6/dist/umd/popper.min.js",
+    //   hello
+    // );
+  </script>
+</html>

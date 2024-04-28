@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body></body>
+  <script>
+    // //closure using normal function 26-4-2024
+    // function fun() {
+    //   var a = 20;
+    //   function innerFun() {
+    //     console.log("inner function output: ", a);
+    //   }
+    //   innerFun();
+    //   console.log("main function output: ", a);
+    // }
+    // fun();
+
+    // //closure using arrow function
+    // const mainFun = (a) => {
+    //   const innerFun = (b) => {
+    //     return b + a;
+    //   };
+    //   return innerFun;
+    // };
+    // var res = mainFun(5);
+    // console.log(res(5));
+    // console.log(res(3));
+
+
+    const data1 = new Date("08/11/2020")
+    const data2 = new Date("11/11/2020")
+    const diff = data2.getTime() - data1.getTime();
+    const year = diff/(1000*60*60*24)
+    console.log(year)
+
+    
+  </script>
+</html>

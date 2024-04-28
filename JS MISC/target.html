@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Target</title>
+  </head>
+  <style>
+    body {
+      background-color: silver;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 90vh;
+    }
+    form {
+      background-color: rgb(96, 96, 95);
+    }
+    form div {
+      padding: 10px 10px 0 0;
+      text-align: center;
+      width: 100%;
+    }
+    form .answer-input input {
+      padding: 10px 0;
+    }
+    form .container input:last-child {
+      background-color: rgb(247, 98, 98);
+      border: 0;
+    }
+    form .container input {
+      padding: 10px 0;
+      margin: 10px 0;
+      width: 20%;
+      height: 10%;
+      border: none;
+      border-radius: 4px;
+    }
+  </style>
+  <body>
+    <form>
+      <div class="answer-input">
+        <input type="text" name="answer" id="answer" />
+      </div>
+      <!-- <div class="container" onclick="fun(event)"> -->
+      <div class="container">
+        <input type="button" value="1" />
+        <input type="button" value="2" />
+        <input type="button" value="3" />
+        <input type="button" value="+" /><br />
+        <input type="button" value="4" />
+        <input type="button" value="5" />
+        <input type="button" value="6" />
+        <input type="button" value="-" /><br />
+        <input type="button" value="7" />
+        <input type="button" value="8" />
+        <input type="button" value="9" />
+        <input type="button" value="/" /><br />
+        <input type="button" value="*" />
+        <input type="button" value="0" />
+        <input type="button" value="=" />
+        <input type="button" value="x" />
+        <br />
+        <input type="button" value="AC" />
+      </div>
+    </form>
+
+    <!-- <button>Click me</button>
+    <p id="msg"></p> -->
+  </body>
+  <script>
+    //    document.querySelector("button").addEventListener("click", fun)
+    //     function fun(event) {
+    //         let text = event.target.tagName;
+    //         document.getElementById("msg").innerHTML = text
+    //     }
+
+    //calculator
+    document.querySelector(".container").addEventListener("click", fun);
+    function fun(event) {
+      let text = event.target.value;
+      console.log(text);
+
+      let val = document.getElementById("answer");
+      let ans = val.value += text;
+      console.log(val);
+
+      if (event.target.value === "=") {
+        return ans.value = eval(ans.value)
+        console.log(eval(ans.value));
+      }
+    }
+
+    //second method
+    let string = "";
+    let data = document.querySelectorAll("input");
+    data.forEach((elm) => {
+      console.log(elm.value);
+    });
+  </script>
+</html>

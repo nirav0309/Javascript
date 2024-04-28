@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>revision</title>
+  </head>
+
+  <body></body>
+  <script>
+    // let input = "";
+    // while (!input) {
+    //   input = prompt("enter something");
+    //   console.log(input);
+    // }
+    // let countdown = 5;
+    // while (countdown >= 0) {
+    //   console.log(countdown);
+    //   countdown--;
+    // }
+    // console.log("Blast off!");
+
+    // let randomNum;
+    // do {
+    //   randomNum = Math.floor(Math.random() * 100);
+    //   console.log("random num: " + randomNum);
+    // } while (randomNum < 50);
+    // console.log("number is greater then or equal to generated number");
+
+    //     const obj = {
+    //     a: 1,
+    //     b: 2,
+    //     c: 3
+    // };
+
+    // for (let key in obj) {
+    //     if (obj.hasOwnProperty(key)) {
+    //         console.log(key + ': ' + obj[key]);
+    //     }
+    // }
+
+    // const str = 'Hello';
+
+    // for (const char of str) {
+    //     console.log(char);
+    // }
+
+    // const map = new Map();
+    // map.set('a', 1);
+    // map.set('b', 2);
+    // map.set('c', 3);
+
+    // for (let key of map) {
+    //     console.log(key );
+    // }
+
+    // const map = new Map();
+    // map.set('a', 1);
+    // map.set('b', 2);
+    // map.set('c', 3);
+
+    // for (const [key, value] of map) {
+    //     console.log(key + ': ' + value);
+    // }
+
+    // const str = 'Hello';
+    // console.log(str.split("").reverse().join(''))
+
+    // const obj1 = {
+    //   name: "kcvh",
+    //   age: 20,
+    // };
+    // const obj2 = {
+    //   name: "john",
+    //   age: 20,
+    //   data: function (name, age) {
+    //     // return name + " " + age;
+    //     console.log(this.name + " " + this.age);
+    //     console.log(name+ age)
+    //   },
+    // };
+    // // console.log(obj2.data.apply(obj1, ["hgd", 90]))
+    // // console.log(obj2.data.apply(obj1));
+
+    // // console.log(obj2.data.call(obj1, "ccall ", 20))
+
+    // const res = obj2.data.bind(obj1, "bind() ", 20)
+    // res()
+
+    // var obj = new Object();
+    // obj.name = "jvhg";
+    // obj.age = 20;
+    // console.log(obj.name + " " + obj.age);
+
+    function fun(name, age) {
+      this.name = name;
+      this.age = age;
+
+      this.changeName = function (otherName) {
+        this.name = otherName;
+      };
+    }
+    const my = new fun("xyz1", 40);
+    console.log(my.name + " " + my.age);
+    my.changeName("xyz2")
+    console.log(my.name + " " + my.age);
+
+    
+  </script>
+</html>

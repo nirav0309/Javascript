@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+  </head>
+  <body>
+    <!-- <button id="btn">value1</button>
+     <button id="btn">value2</button>
+     <button id="btn">value3</button>
+     <button id="btn">value4</button>
+     <button id="btn">value5</button> -->
+
+    <!-- <button class="btn" >value1</button>
+    <button class="btn" >value2</button> -->
+
+    <!-- first example -->
+    <button type="button" id="btn">xyz1</button>
+    <button type="button" id="btn">xyz2</button>
+    <button type="button" id="btn">xyz3</button>
+
+    <!-- second example -->
+    <!-- <button type="button" id="btn" value="value1">click me to get value</button>
+    <button type="button" id="btn" value="value2">click me to get value</button>
+    <button type="button" id="btn" value="value3">click me to get value</button> -->
+  </body>
+  <script>
+    const data = [{ value: "xyz1" }, { value: "xyz2" }, { value: "xyz3" }];
+
+    const myButton = document.querySelectorAll("button");
+    myButton.forEach((e) => {
+      e.addEventListener("click", () => {
+        let value = e.innerText;
+        if (!data.includes(value)) {
+          console.log(data.find((el) => el.value == value));
+        }
+      });
+    });
+
+    //issue in first example, now done
+    // let data = [];
+    // const myButton = document.querySelectorAll("#btn");
+    // myButton.forEach((e) => {
+    //   e.addEventListener("click", () => {
+    //     let value = e.innerText;
+    //     // let style = e.style
+    //     if (data.includes(value)) {
+    //       data = data.filter((el) => el != value);
+    //       e.style = "background-color: "
+    //       console.log(data);
+    //       // data.push(value);
+    //       // console.log(data);
+    //     } else {
+    //       // data.pop();
+    //       // console.log(data);\
+    //       data.push(value);
+    //       e.style = "background-color: red"
+    //       console.log(data);
+    //     }
+    //   });
+    // });
+
+    //add remove with value and  color change
+    // let data = ["xyz1", "xyz2", "xyz3"];
+    // const myButton = document.querySelectorAll("#btn");
+    // myButton.forEach((e) => {
+    //   e.addEventListener("click", () => {
+    //     let value = e.innerText;
+    //     e.style.backgroundColor = "red";
+    //     let color = e.style.backgroundColor;
+
+    //     if (data.includes(value)) {
+    //       data = data.filter((el) => el != value);
+
+    //       e.style.backgroundColor = "";
+    //       console.log(data);
+    //     } else {
+    //       data.push(value);
+
+    //       e.style.backgroundColor = color;
+    //       console.log(data);
+    //     }
+
+    // let data = [];
+    // const myButton = document.querySelectorAll("#btn");
+    // myButton.forEach((e) => {
+    //   e.addEventListener("click", () => {
+    //     let value = e.innerText;
+    //     e.style.backgroundColor = "red";
+    //     let color = e.style.backgroundColor;
+
+    //     if (!data.includes(value)) {
+    //       data.push(value)
+    //       console.log(data);
+    //     }
+    //     // else {
+    //     //   data = data.filter((el) => el != value);
+
+    //     //   e.style.backgroundColor = color;
+    //     //   console.log(data);
+    //     // }
+
+    // let value = e.innerText;
+    // if (data.includes(value)) {
+    //   data = data.filter((el) => el != value);
+    //   e.style = "background-color: "
+    //   console.log(data);
+
+    // } else {
+
+    //   data.push(value);
+    //   e.style = "background-color: red"
+    //   console.log(data);
+    // }
+
+    //   });
+    // });
+
+    //second example done
+    // let data = [];
+    // const myButton = document.querySelectorAll("#btn");
+    // myButton.forEach((e) => {
+    //   e.addEventListener("click", () => {
+    //     if (data.includes(e.value)) {
+    //       data = data.filter((el) => el != e.value);
+    //       console.log(data);
+    //     } else {
+    //       data.push(e.value);
+    //       console.log(data);
+    //     }
+    //   });
+    // });
+
+    //pending task
+    // let data2 = [];
+    // console.log(data2);
+    // var val = document.querySelectorAll(".btn");
+    // const my = val.forEach(e=>{
+    //     let val1 = e.innerText;
+    // });
+    // my.addEventListener("click", ()=>{
+    //     if(!data2.includes(val1)){
+    //         data2.push(val1);
+    //     }
+    // })
+
+    // function fun() {
+    //   if (!data.includes(val[0].value)) {
+    //       data2.push(val);
+    //       console.log(data2)
+    //   }else{
+    //     data2.pop();
+    //     console.log(data2);
+    //   }
+    // }
+
+    // //pending wk
+    // let data = [];
+    // var val = document.getElementsByClassName("btn");
+    // function fun() {
+    //   if (data[0] !== val[0].innerText) {
+    //     data.push(val[0].innerText);
+    //     console.log(data);
+    //   } else {
+    //     data.pop();
+    //     console.log(data);
+    //   }
+    // }
+    // function fun1() {
+    //   if (data[0] !== val[1].innerText) {
+    //     data.push(val[1].innerText);
+    //     console.log(data);
+    //   } else {
+    //     data.pop();
+    //     console.log(data);
+    //   }
+    // }
+
+    //let data = []
+    // const var = document.querySelectorAll("#btn").addEventListener("click", ()=>{
+
+    // })
+
+    // let data = [];
+    // var val = document.getElementsByClassName("btn").innerText;
+    // function fun() {
+    //   if (data[0] !== val) {
+    //     data.unshift(val);
+    //     console.log(data);
+    //   } else {
+    //     data.splice(val);
+    //   }
+    // }
+  </script>
+</html>

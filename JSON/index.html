@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <input type="text" id="xyz"/>
+    <input type="button" value="click me" id="demo" onclick="myFunction()" /><br>
+    <input type="button" value="Add data" id="demo" onclick="myFunction1()" />
+    <p id="print"></p>
+  </body>
+  <script>
+    // JSON.parse() when receiving data from web server, 23-04-2024-------------------------------
+    //ex1 using object
+    // const text1 = '{"name":"xyz", "age":32}'; //object
+    // const res1 = JSON.parse(text1);
+    // document.querySelector("#msg1").innerHTML = res1.name + ", " + res1.age;
+
+    //ex2 using array
+    // const text2 = '["xyz1", "xyz2"]'; //array
+    // const res2 = JSON.parse(text2);
+    // //method 1 using foreach
+    // //  res2.forEach((element) => {
+    // //     document.write(element);
+    // // });
+
+    // //method 2 using for loop
+    // let xyz = '';
+    // for (const i of res2) {
+    //     xyz += i +  ", ";
+    // }
+    // document.getElementById("msg1").innerHTML = xyz;
+
+    //JSON.stringify() when sending data to a web server
+    // const obj = {name: "xyz", age:20} //object
+    // const res3 = JSON.stringify(obj); //converts an object into string format
+
+    // const arr = ["xyz1", "xyz2"]
+    // const res4 = JSON.stringify(arr); //converts an array into string format
+
+    //Storing data
+    // const myObj = {
+    //     name:"xyz",
+    //     age:20,
+    //     city: "surat",
+    // }
+    // const strData = JSON.stringify(myObj)
+    // localStorage.setItem("userInfo",strData)
+
+    // //Retrieving Data
+    // const txt = localStorage.getItem("userInfo")
+    // const obj = JSON.parse(txt)
+    // // document.querySelector("#msg2").innerHTML = obj.name + " " +obj.age;
+
+    
+
+    //ex1
+    // const obj = `{"name":"xyz", "age":90}`
+    // const person = JSON.parse(obj);
+    // console.log("Before values: " + obj)
+    // person.age = 20;
+
+    // const newObj = JSON.stringify(person)
+    // console.log("After values: "  + newObj)
+
+    // function myFunction() {
+    //   const obj = `{"name":"xyz", "age":90}`;
+    //   let person = JSON.parse(obj);
+    //   const newobj = JSON.stringify(person);
+    //   document.getElementById("print").innerHTML = newobj;
+    // }
+
+
+    //example
+    // function myFunction() {
+    //   const obj = `{"name":["xyz", "xyz1", "xyz2"], "age":90}`;
+    //   let person = JSON.parse(obj);
+    //   // const newObj = JSON.stringify(person);
+
+    // let  person1 = person.name;
+
+    //   person1.forEach((person) => {
+    //     console.log(person);
+    //   });
+
+    //   // document.getElementById("print").innerHTML = newObj;
+    // }
+    // function myFunction1(){
+    //   const inputVal = document.getElementById("xyz").value;
+    //   person1.push(inputVal);
+      
+    // }
+    
+  </script>
+</html>
