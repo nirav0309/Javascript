@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect and void</title>
+</head>
+<body>
+    <button type="button" >click me to do nothing</button>
+    <button type="button">click me to do something</button>
+</body>
+<script>
+     document.querySelector("button").addEventListener('click', void function(){
+        alert("void is used and it evaluates the expression")
+    });
+    document.querySelector("button:nth-child(2)").addEventListener('click', function(){
+        alert("void is not used so, alert when click")
+    });
+ 
+    // window.location = "https://www.javatpoint.com/es6-page-redirect"
+
+    // window.location.reload("https://www.javatpoint.com/es6-page-redirect")
+
+    // window.location.replace("https://www.javatpoint.com/es6-page-redirect")
+
+    // window.location.reload("https://www.w3schools.com/js/js_window_location.asp")
+
+
+</script>
+</html>

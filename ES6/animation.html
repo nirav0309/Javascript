@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Animation</title>
+    <script type="text/javascript">
+      let anime;
+      function xyz() {
+        img = document.getElementById("myImg");
+        img.style.position = "relative";
+        img.style.left = "0px";
+      }
+
+      function start() {
+        img.style.left = parseInt(img.style.left) + 10 + "px";
+        anime = setTimeout(start, 45);
+      }
+
+      function stop() {
+        clearInterval(anime);
+        img.style.left = "0px";
+      }
+      window.onload = xyz;
+    </script>
+  </head>
+
+  <body>
+    <form>
+      <img id="myImg" src="https://www.javatpoint.com/oprweb/train1.png" />
+        <h2 style="color: darkblue">
+          Click the following buttons to handle animation
+        </h2>
+        <input type="button" value="Start" onclick="start()" />
+        <input type="button" value="Stop" onclick="stop()" />
+      </div>
+    </form>
+  </body>
+</html>

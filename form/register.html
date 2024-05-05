@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+  </head>
+  <style>
+    #error1,
+    #error2,
+    #error3 {
+      color: red;
+    }
+  </style>
+  <body>
+    <div id="main">
+      <h3>Register Page...</h3>
+      <form name="MyForm" onsubmit="return formValidation()">
+        <label for="name">Name</label>
+        <input type="name" id="name" autocomplete="on"/>
+        <span id="error1"></span><br />
+
+        <label for="email">Email</label>
+        <input type="text" id="email" autocomplete="on"/>
+        <span id="error2"></span><br />
+
+        <label for="password">Password</label>
+        <input type="text" id="password" autocomplete="on"/>
+        <span id="error3"></span><br />
+
+        <button id="btn" onclick="Register()">Register</button>
+      </form>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

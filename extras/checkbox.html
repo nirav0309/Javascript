@@ -12,30 +12,71 @@
       </label>
       <div id="child">
         <label>
-          <input type="checkbox" value="mainCheck" id="childCheck" /> 1 </label
+          <input
+            type="checkbox"
+            value="mainCheck"
+            id="childCheck"
+            name="child"
+          />
+          1 </label
         ><br />
         <label>
-          <input type="checkbox" value="mainCheck" id="childCheck" /> 2 </label
+          <input
+            type="checkbox"
+            value="mainCheck"
+            id="childCheck"
+            name="child"
+          />
+          2 </label
         ><br />
         <label>
-          <input type="checkbox" value="mainCheck" id="childCheck" /> 3
+          <input
+            type="checkbox"
+            value="mainCheck"
+            id="childCheck"
+            name="child"
+          />
+          3
         </label>
       </div>
     </div>
   </body>
   <script>
-    document.querySelector("input").addEventListener("click", fun);
-    function fun() {
-      const parentCheck = document.querySelector("#mainCheck");
-      const childCheck = document.querySelectorAll("#childCheck");
+    const parentCheck = document.querySelector("#mainCheck");
+    const childCheck = document.querySelectorAll("#childCheck");
 
-      parentCheck.addEventListener("click", () => {
-        if (parentCheck.checked) {
-          childCheck.forEach((e) => (e.checked = true));
-        } else {
-          childCheck.forEach((e) => (e.checked = false));
+    parentCheck.addEventListener("change", () => {
+      if (parentCheck.checked) {
+        childCheck.forEach((e) => (e.checked = true));
+      } else {
+        childCheck.forEach((e) => (e.checked = false));
+      }
+    });
+
+    childCheck.forEach((element, index, arr) => {
+      element.addEventListener("change", () => {
+        //working but issue, now solved
+        let checkedCount = 0;
+        for (let i of childCheck) {
+          if (i.checked) {
+            checkedCount++;
+          }
         }
+        if (checkedCount == 0) {
+          parentCheck.checked = false;
+        } else if (checkedCount === childCheck.length) {
+          parentCheck.checked = true;
+        } else {
+          parentCheck.checked = false;
+        }
+
+        //working
+        // let xyz = document.querySelectorAll(
+        //   'input[name="child"]:checked'
+        // ).length;
+        // parentCheck.checked = xyz === childCheck.length;
       });
-    }
+    });
+
   </script>
 </html>

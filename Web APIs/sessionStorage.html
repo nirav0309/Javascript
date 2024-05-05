@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SessionStorage</title>
+  </head>
+  <body>
+    <button type="button">Click me</button>
+    <button type="button" id="del">Delete Button</button>
+  </body>
+  <script>
+    //setItem(), getItem(), key(), removeItem() and length method
+    document.querySelector("button").addEventListener("click", () => {
+      const userName = prompt("Please enter your username");
+      if (userName) {
+        sessionStorage.setItem("username", userName);
+        alert(`Welcome ${userName}!`);
+      } else {
+        alert("You must write something!");
+      }
+    });
+    let storedUserName = sessionStorage.getItem("username");
+    console.log(storedUserName);
+    let length = sessionStorage.length;
+    console.log(length);
+    let key = sessionStorage.key(0);
+    console.log(key);
+
+    document.getElementById("del").addEventListener("click", () => {
+      sessionStorage.removeItem("username");
+      alert("Username has been deleted!");
+    });
+
+    //clear() method
+    // document.querySelector('button').addEventListener('click', () => {
+    //   sessionStorage.setItem("myTime", Date.now());
+    //   sessionStorage.setItem("myName", "John");
+    //   sessionStorage.setItem("myAge", 36);
+    // })
+
+    // document.querySelector('#del').addEventListener('click', () => {
+    //   sessionStorage.clear();
+    // })
+  </script>
+</html>

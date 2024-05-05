@@ -1,4 +1,7 @@
 {
     "git.ignoreLimitWarning": true,
-    "livePreview.defaultPreviewPath": "/SET Object/set.html"
+    "livePreview.defaultPreviewPath": "/SET Object/set.html",
+    "cSpell.words": [
+        "trapranrent"
+    ]
 }

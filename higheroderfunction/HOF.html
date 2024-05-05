@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher Order Function</title>
+  </head>
+  <body></body>
+  <script>
+    //1. Accepting Function as Arguments
+    // function HOF(callback) {
+    //   console.log("hello");
+    //   callback()
+    // }
+    // function LOF(){
+    //     console.log("good Morning")
+    // }
+    // HOF(LOF)
+
+    //2. Returning Function
+    // function greetFunction(greet){
+    //     return function (name){
+    //         console.log(greet + " " + name);
+    //     };
+    // }
+    // const greetHello = greetFunction("Good Morning");
+    // greetHello("name1")
+
+    // const greetBye =  greetFunction("Good Bye");
+    // greetBye("name2")
+
+    //3. Abstraction
+    //using normal function
+    // function operationOnArray(array, operation) {
+    //   return array.map(operation);
+    // }
+    // function _double(num) {
+    //   return num * 20;
+    // }
+    // var numbers = [1, 2, 3, 4, 5];
+    // var DoubleNumbers = operationOnArray(numbers, _double);
+    // console.log(DoubleNumbers);
+
+    //using arrow function
+    // let operationOnArray = (array, operation) =>{
+    //     return array.map(operation)
+    // }
+    // let double = (num) =>{
+    //     return num * 2;
+    // }
+    // const numbers = [1,2,3,4,5]
+    // const DoubleNumbers = operationOnArray(numbers, double);
+    // console.log(DoubleNumbers);
+
+    //filter, map
+    // function filterOnArray(array, condition) {
+    //   return array.filter(condition);
+    // }
+    // var numbers = [1, 2, 3, 4, 5];
+    // const filter = filterOnArray(numbers, (e) => e > 3);
+    // console.log(filter);
+
+    // const map = filterOnArray(numbers, (e) => e * 3);
+    // console.log(map);
+
+    //flexibility
+    // function multiple(xyz) {
+    //   return function (num) {
+    //     return num * xyz;
+    //   };
+    // }
+    // const add = multiple(2);
+    // console.log(add(2));
+
+    // const arr = {
+    //   name: "xyz",
+    //   age: 29,
+    // }
+    // const arr1 = {
+
+    // }
+
+    //example
+    function fun(xyz) {
+      return new Promise((resolve) => setTimeout(resolve, xyz));
+    }
+    async function myFunction() {
+      let code = " ";
+      let codeWithSemicolons = code.replace(/([^;\n])$/, "$1;");
+
+      let p1 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Roses are Red,");
+        }, 1000);
+      });
+
+      let p2 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Violets are Blue,");
+        }, 2000);
+      });
+
+      let p3 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Unexpected");
+        }, 3000);
+      });
+
+      let p4 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(`"${codeWithSemicolons} "`);
+        }, 4000);
+      });
+
+      let p5 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("at line 32.");
+        }, 5000);
+      });
+
+      const res1 = await p1;
+      console.log(res1);
+
+      const res2 = await p2;
+      console.log(res2);
+
+      const res3 = await p3;
+      console.log(res3);
+
+      const res4 = await p4;
+      console.log(res4);
+
+      const res5 = await p5;
+      console.log(res5);
+    }
+
+    myFunction();
+  </script>
+</html>

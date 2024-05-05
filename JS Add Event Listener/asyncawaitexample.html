@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async await example</title>
+  </head>
+  <body>
+    <section class="home">
+      <div class="home-text">
+        <span
+          is="type-async"
+          id="type-text"
+          style="font-size: 25px; font-weight: 300"
+        ></span>
+        <span class="blinking-cursor">_</span>
+      </div>
+    </section>
+  </body>
+  <script>
+    function blinkText() {
+      async function init() {
+        const node = document.querySelector("#type-text");
+
+        let code = " ";
+        let codeWithSemicolons = code.replace(/([^;\n])$/, "$1;");
+
+        await sleep(1000);
+        node.innerText = "";
+        await node.type("roses are red, ");
+
+        while (true) {
+          await node.type("violets are blue,");
+          await sleep(2000);
+          await node.delete("violets are blue!");
+
+          await node.type("unexpected");
+          await sleep(2000);
+          await node.delete("unexpected!");
+
+          await node.type(`"${codeWithSemicolons} "`);
+          await sleep(2000);
+          await node.delete(`"${codeWithSemicolons} "`);
+
+          await node.type("at line 32");
+          await sleep(2000);
+          await node.delete("alt line 32.");
+        }
+      }
+
+      const sleep = (time) =>
+        new Promise((resolve) => setTimeout(resolve, time));
+
+      class TypeAsync extends HTMLSpanElement {
+        get typeInterval() {
+          const randomMs = 100 * Math.random();
+          return randomMs < 40 ? 20 : randomMs;
+        }
+
+        async type(text) {
+          for (let character of text) {
+            this.innerText += character;
+            await sleep(this.typeInterval);
+          }
+        }
+
+        async delete(text) {
+          for (let character of text) {
+            this.innerText = this.innerText.slice(this.innerText.length);
+            await sleep(this.typeInterval);
+          }
+        }
+      }
+
+      customElements.define("type-async", TypeAsync, { extends: "span" });
+
+      init();
+    }
+    blinkText();
+  </script>
+</html>

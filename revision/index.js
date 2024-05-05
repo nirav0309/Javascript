@@ -68,3 +68,27 @@ for (let key of map.keys()) {
     console.log(key + ': ' + map.get(key));
 }
 
+// const x = () =>{
+//       console.log("hello")
+//     }
+//     x()
+
+//     const y = () =>{
+//       x()
+//     }
+//     y()
+
+//     y = () =>{
+//       console.log("hvfg")
+//     }
+//     y()
+
+//     const y = (a,b) =>{
+//       return a + b;
+//     }
+//     console.log(y(9,9))
+  
+//     y = (a,b) =>{
+//       return a - b;
+//     }
+//     console.log(y(9,9))

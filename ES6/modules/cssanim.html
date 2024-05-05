@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Image anim</title>
+  </head>
+  <style>
+    @keyframes example {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    body {
+      background-color: #111;
+    }
+    #container {
+      position: absolute;
+      overflow: hidden;
+      padding: 20px;
+      width: 40%;
+      display: flex;
+      margin: 250px 400px auto;
+    }
+    #container #move {
+      display: inline-block;
+      animation-duration: 15s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-name: example;
+    }
+    #container #move img {
+      overflow-x: hidden;
+      position: relative;
+      height: 50px;
+    }
+    .left {
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      background: linear-gradient(to right, #ffffff, trapranrent);
+      left: 0;
+      z-index: 20;
+    }
+    .right {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      background: linear-gradient(to right, trapranrent, #111);
+      left: 0;
+      z-index: 20;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="left"></div>
+      <div id="move">
+        <img src="https://www.ag-grid.com/images/ag-grid-customer-logos.webp" />
+      </div>
+      <div id="move">
+        <img src="https://www.ag-grid.com/images/ag-grid-customer-logos.webp" />
+      </div>
+      <div class="left"></div>
+    </div>
+  </body>
+  <script></script>
+</html>

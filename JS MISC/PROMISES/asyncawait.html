@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Async/Await</title>
   </head>
-  <body></body>
+  <body>
+  </body>
   <script>
+    
     // async function asyncFun(){
     //     const res = await ("Finished")
     //     console.log(res)
@@ -107,10 +109,19 @@
     // }
     // fun();
 
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=50").then((res) =>
-      console.log(res)
-    );
-    console.log("end of the script");
+    //fetch data
+    //   fetch("https://pokeapi.co/api/v2/pokemon?limit=50").then((res) =>
+    //     console.log(res)
+    //   );
+    //   console.log("end of the script");
+
+    //  async function api ()
+    //   {
+    //     const api = await fetch("https://pokeapi.co/api/v2/pokemon?limit=50");
+    //     const data = await api.json();
+    //     console.log(data)
+    //   }
+    //   api();
 
     // working
     // Promise.resolve().then(() => console.log(1));
@@ -132,5 +143,26 @@
     //   (() => console.log(4));
     // })();
     // console.log(5);
+
+    //pending
+    // async function printNumbers() {
+    //   // setTimeout(() => {
+    //   //   console.log("performing some operation");
+    //   // }, 1000);
+
+    //   return new Promise((resolve)=> {
+    //     setTimeout(() => {
+    //       console.log("resolved")
+    //     }, 3000);
+    //   })
+    //   await Promise;
+    // }
+    // printNumbers()
+    // .then((val) => console.log("promise completed"+ val));
+
+    // let code = " ";
+    // let codeWithSemicolons = code.replace(/([^;\n])$/, "$1;");
+
+    // console.log(codeWithSemicolons);
   </script>
 </html>
