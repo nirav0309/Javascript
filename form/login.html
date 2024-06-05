@@ -4,21 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+  <style></style>
+  <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+    <div id="main">
+      <h3>Login</h3>
+      <form name="MyForm" onsubmit="return formValidation()">
+        <label for="email">Email</label>
+        <input type="text" id="email" /><br />
+        <span id="error1"></span><br />
 
-  <body>
-    <h3>Login Page...</h3>
-    <form name="MyForm" onsubmit="return formValidation()">
-      <label for="name">Name</label>
-      <input type="text" id="name" />
-      <span id="error1"></span><br />
+        <label for="password">Password</label>
+        <input type="password" id="password" /><br />
+        <span id="error2"></span><br />
 
-      <label for="password">Password</label>
-      <input type="text" id="password" />
-      <span id="error3"></span><br />
-
-      <button id="btn1">Login</button>
-    </form>
+        <button id="btn1">Login</button>
+      </form>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

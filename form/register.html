@@ -4,33 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
   </head>
-  <style>
-    #error1,
-    #error2,
-    #error3 {
-      color: red;
-    }
-  </style>
-  <body>
+
+  <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
     <div id="main">
-      <h3>Register Page...</h3>
-      <form name="MyForm" onsubmit="return formValidation()">
-        <label for="name">Name</label>
-        <input type="name" id="name" autocomplete="on"/>
+      <h3>Registration</h3>
+      <form name="MyForm" onsubmit="return Register(event)">
+        <label for="name">First Name</label>
+        <input type="name" id="name" autocomplete="on" class="inputField" />
         <span id="error1"></span><br />
 
+        <label for="name">Last Name</label>
+        <input type="name" id="LastName" autocomplete="on" class="inputField" />
+        <span id="error4"></span><br />
+
         <label for="email">Email</label>
-        <input type="text" id="email" autocomplete="on"/>
+        <input type="text" id="email" autocomplete="on" class="inputField" />
         <span id="error2"></span><br />
 
         <label for="password">Password</label>
-        <input type="text" id="password" autocomplete="on"/>
+        <input
+          type="password"
+          id="password"
+          autocomplete="on"
+          class="inputField"
+        />
         <span id="error3"></span><br />
 
-        <button id="btn" onclick="Register()">Register</button>
+        <label for="Gender">Gender</label>
+        male:
+        <input type="radio" name="name1" value="male" id="gender1" />
+        female:<input
+          type="radio"
+          value="female"
+          id="gender2"
+          name="name1"
+        /><br>
+        <span id="error5"></span>
+        <br /><br />
+
+        <label for="Hobby">Hobby</label>
+        Photography:<input type="checkbox" id="xyz1" /> Cooking:<input
+          type="checkbox"
+          id="xyz2"
+        />
+        Painting:<input type="checkbox" id="xyz3" /><br />
+        <span id="error6"></span><br /><br />
+
+        <button id="btn" type="submit">Register</button>
+        <button id="btn1" type="button" value="Login" onclick="LoginPage()">
+          Login
+        </button>
       </form>
     </div>
   </body>
-  <script src="index.js"></script>
 </html>

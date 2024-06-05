@@ -336,7 +336,7 @@ console.log("findLastIndex : ",arr39.findLastIndex(e=>e.id === "40"))
 //  const spl = arr41.toSpliced(0, 1)
 // //  console.log("toSplice : ", spl)
 
-42
+// 42
 const arr42 = [
     { name: "cat", id: "20" },
     { name: "dog", id: "50" },

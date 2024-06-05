@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeout and Interval</title>
+  </head>
+  <body></body>
+  <script>
+    let a = setInterval(()=>{
+        document.write("hello <br/>");
+    },1000)
+
+    setTimeout(()=>{
+        clearInterval(a)
+    },5000)
+
+    // function fun(param){
+    //     return new Promise(resolve=>setTimeout(resolve, param))
+    // }
+    // async function fun1(){
+    //     for(i=0;i<=10; i++){
+    //         await fun(1000)
+    //         console.log(i)
+    //     }
+    // }
+    // fun1()
+
+    // function xyz(ml){
+    //     return new Promise ((resolve, reject)=>{
+    //         setTimeout(resolve, ml)
+    //     })
+    // }
+    // async function xyz1(){
+    //      for(i=0;i<=10; i++){
+    //         await xyz(1000)
+    //         console.log(i)
+    //     }
+    // }
+    // xyz1()
+
+    //-------------07-05-2024
+    //     let id;
+    //     function xyz() {
+    //       id = setTimeout(xyz1, 5000);
+    //     }
+    //     function xyz1() {
+    //       console.log("hello");
+    //     }
+    //    xyz()
+
+    //     let id;
+    //     function xyz() {
+    //       id = setInterval(xyz1, 5000);
+    //     }
+
+    //     function xyz1() {
+    //       console.log("hello");
+    //     }
+    //    xyz()
+  </script>
+</html>

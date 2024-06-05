@@ -6,6 +6,21 @@
     <title>Table</title>
   </head>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    #main {
+      max-width: 400px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
     table {
       border-collapse: collapse;
       width: 50%;
@@ -16,6 +31,7 @@
       border: 1px solid black;
       padding: 8px;
       text-align: left;
+      background-color: lightgray;
     }
 
     button {
@@ -27,24 +43,35 @@
     .form-group {
       margin-bottom: 10px;
     }
+    #myTable {
+      margin: 20px;
+      padding: 20px;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+    }
   </style>
 
   <body>
-    <h2>Data Table</h2>
-    Name: <input type="text" name="name" id="name" /><br /><br />
+    <div id="main">
+      <h2>Student Data Table</h2>
 
-    Address: <input type="text" name="address" id="address" /><br /><br />
+      <form name="myForm" onsubmit="fun(event)">
+        Name: <input type="text" name="name1" id="name" /> <br /><br />
 
-    Age: <input type="text" name="age" id="age" /><br />
+        Address: <input type="text" name="address1" id="address" /> <br /><br />
 
-    <button id="Addbtn" onclick="fun()">Add Row</button><br /><br />
+        Number: <input type="number" name="number1" id="number" maxlength="10"/> <br /><br />
 
+        <button id="Addbtn" type="submit">Add Row</button>
+        <br /><br />
+      </form>
+    </div>
     <table id="myTable">
       <thead>
         <tr>
           <th>Name</th>
           <th>Address</th>
-          <th>Age</th>
+          <th>Number</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -52,10 +79,26 @@
     </table>
   </body>
   <script>
-    function fun() {
+    function fun(event) {
+      event.preventDefault();
+      const input1 = document.myForm.name1.value;
+      const input2 = document.myForm.address1.value;
+      const input3 = document.myForm.number1.value;
+
+      if (input1 == null || input1 == "") {
+        alert("Enter Name");
+        return false;
+      } else if (input2 == null || input2 == "") {
+        alert("Enter Address");
+        return false;
+      } else if (input3 == null || input3 == "" || input3.length<10) {
+        alert("Enter Number");
+        return false;
+      }
+
       let myName = document.getElementById("name").value;
       let myAddress = document.getElementById("address").value;
-      let myAge = document.getElementById("age").value;
+      let myNumber = document.getElementById("number").value;
       let tr = document.createElement("tr");
 
       let td1 = tr.appendChild(document.createElement("td"));
@@ -65,7 +108,7 @@
 
       td1.innerHTML = myName;
       td2.innerHTML = myAddress;
-      td3.innerHTML = myAge;
+      td3.innerHTML = myNumber;
       td4.innerHTML =
         '<button id="Delete" onclick="deleteItem(this)">Delete Row</button>' +
         '<button id="Edit" onclick="editItem(this)">Edit Row</button>';
@@ -78,12 +121,60 @@
       let del = param.parentNode.parentNode;
       del.parentNode.removeChild(del);
     }
+
     function clear() {
       document.getElementById("name").value = "";
       document.getElementById("address").value = "";
-      document.getElementById("age").value = "";
+      document.getElementById("number").value = "";
+    }
+    //edit data using prompt---------------
+    function editItem(param) {
+      let del = param.parentNode.parentNode;
+      var xyz = document.querySelectorAll("td");
+      let newName = prompt("Enter name: ", xyz[0].innerHTML);
+      let newAddress = prompt("Enter Address: ", xyz[1].innerHTML);
+      let newNumber = prompt("Enter Number: ", xyz[2].innerHTML);
+
+      if (newName != null && newAddress != null && newNumber != null) {
+        xyz[0].innerHTML = newName;
+        xyz[1].innerHTML = newAddress;
+        xyz[2].innerHTML = newNumber;
+      }
     }
 
+    //     function Register(e) {
+    //   e.preventDefault();
+    //   const isError = formValidation();
+    //   if (isError) return;
+    //   const myName = document.getElementById("name").value;
+    //   const myAddress = document.getElementById("address").value;
+    //   const myNumber = document.getElementById("number").value;
+
+    //   var status = false;
+
+    //   if (myName == null || myName == "") {
+    //     document.getElementById("error1").innerHTML = "Name is required";
+    //     status = false;
+    //   } else {
+    //     document.getElementById("error1").innerHTML = "";
+    //   }
+
+    //   if (myAddress == null || myAddress == "") {
+    //     document.getElementById("error2").innerHTML = "LastName is required";
+    //     status = false;
+    //   } else {
+    //     document.getElementById("error2").innerHTML = "";
+    //   }
+
+    //   if (myNumber == null || myNumber == "") {
+    //     document.getElementById("error3").innerHTML = "Enter a valid email address";
+    //     status = true;
+    //   } else {
+    //     document.getElementById("error3").innerHTML = "";
+    //   }
+
+    // }
+    
     // function editItem(param) {
     //   let add = param.parentNode.parentNode;
     //   let myName = document.getElementById("name").value;
@@ -96,14 +187,23 @@
     //   let td3 = tr.appendChild(document.createElement("td"));
     //   let td4 = tr.appendChild(document.createElement("td"));
 
-    //   td1.innerHTML = '<input type="text" name="name" id="name1" />';
-    //   td2.innerHTML = '<input type="text" name="name" id="name2" />';
-    //   td3.innerHTML = '<input type="text" name="name" id="name3" />';
+    //   td1.innerHTML = '<input type="text" class="name" id="name1" />';
+    //   td2.innerHTML = '<input type="text" class="name" id="name2" />';
+    //   td3.innerHTML = '<input type="text" class="name" id="name3" />';
     //   td4.innerHTML =
     //     '<button id="Delete" onclick="deleteItem(this)">Delete Row</button>' +
     //     '<button id="Edit" onclick="addEditItem(this)" >Edit Row</button>';
 
     //   document.getElementById("myTable").replaceChild(tr, add);
+
+    //   let inputField = document.querySelectorAll(".name");
+    //   inputField.forEach((e) => {
+    //     e.addEventListener("blur", () => {
+    //       if (e.value === "") {
+    //         e.style.display = "none";
+    //       }
+    //     });
+    //   });
     // }
 
     // function addEditItem(param) {
@@ -129,40 +229,24 @@
     // }
 
     //edit using data table inputs--------------
-    function editItem(param) {
-      let del = param.parentNode.parentNode;
-      let edit = document.querySelectorAll("td");
-
-      let myName = document.getElementById("name").value;
-      let myAddress = document.getElementById("address").value;
-      let myAge = document.getElementById("age").value;
-
-      let name = edit[0].innerHTML;
-      let address = edit[1].innerHTML;
-      let age = edit[2].innerHTML;
-
-      edit[0].innerHTML = myName;
-      edit[1].innerHTML = myAddress;
-      edit[2].innerHTML = myAge;
-
-      clear();
-    }
-
-    //edit data using prompt---------------
     // function editItem(param) {
     //   let del = param.parentNode.parentNode;
-    //   var cell = document.querySelectorAll("td");
-    //   let newName = prompt("Enter name: ", cell[0].innerHTML);
-    //   let newAddress = prompt("Enter Address: ", cell[1].innerHTML);
-    //   let newAge = prompt("Enter Age: ", cell[2].innerHTML);
+    //   let edit = document.querySelectorAll("td");
 
-    //   if (newName != null && newAddress != null && newAge != null) {
-    //     cell[0].innerHTML = newName;
-    //     cell[1].innerHTML = newAddress;
-    //     cell[2].innerHTML = newAge;
-    //   }
+    //   let myName = document.getElementById("name").value;
+    //   let myAddress = document.getElementById("address").value;
+    //   let myAge = document.getElementById("age").value;
+
+    //   let name = edit[0].innerHTML;
+    //   let address = edit[1].innerHTML;
+    //   let age = edit[2].innerHTML;
+
+    //   edit[0].innerHTML = myName;
+    //   edit[1].innerHTML = myAddress;
+    //   edit[2].innerHTML = myAge;
+
+    //   clear();
     // }
-
 
     // function editItem(param) { //work only with insert cells-------
     //   let del = param.parentNode.parentNode;

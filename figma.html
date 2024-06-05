@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahl Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1000px;
+      background-color: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-section {
+      flex: 1;
+      position: relative;
+    }
+
+    .image-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%);
+    }
+
+    .login-section {
+      flex: 1;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+      position: relative;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: #fff;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 38px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .forgot-password {
+      display: block;
+      margin: 10px 0;
+      text-align: right;
+      color: #0f9d58;
+      text-decoration: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0f9d58;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .image-section {
+        display: none;
+      }
+
+      .login-section {
+        flex: 1;
+      }
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="image-section">
+        <img src="background.jpg" alt="Background Image" />
+      </div>
+      <div class="login-section">
+        <div class="login-box">
+          <img src="logo.png" alt="Sahl Logo" class="logo" />
+          <form>
+            <div class="input-group">
+              <label for="phone-code">Code</label>
+              <select id="phone-code" name="phone-code">
+                <option value="IN">IN (+91)</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="phone-number">Phone Number</label>
+              <input
+                type="tel"
+                id="phone-number"
+                name="phone-number"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+              <span class="toggle-password">&#128065;</span>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      document
+        .querySelector(".toggle-password")
+        .addEventListener("click", function () {
+          const passwordInput = document.getElementById("password");
+          const type =
+            passwordInput.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          passwordInput.setAttribute("type", type);
+        });
+    </script>
+  </body>
+</html>

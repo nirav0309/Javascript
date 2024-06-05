@@ -1,13 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
-</body>
-<script>
-    document.write(`<center style = "font-size : 100px;">Welcome <b>${localStorage.getItem("name")}<b/><center>`)
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+  </head>
+  <style>
+    #error1,
+    #error2,
+    #error3 {
+      color: red;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    #main {
+      max-width: 400px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+      background-color: lightgray;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+    #myTable {
+      margin: 20px;
+      padding: 20px;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+    }
+    #User-Logout {
+      display: block;
+      position: relative;
+      top: 268px;
+      left: 120px;
+    }
+    input[type="text"],
+    input[type="text"],
+    input[type="number"] {
+      width: 90%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    #Logout {
+      position: relative;
+      float: right;
+      bottom: 65px;
+      right: 40px;
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  </style>
+
+  <body
+    onLoad="noBack();"
+    onpageshow="if (event.persisted) noBack();"
+    onUnload=""
+  >
+    <h2 id="User-Logout">
+      <script>
+        // document.write(
+        //   `<center style = "font-size : 20px;">Welcome <br><b>${localStorage.getItem(
+        //     "email"
+        //   )}<b/><center>
+        //     <input  id="LogoutButton" type="submit" value = "Logout"onclick="Logout()" style = "font-size : 20px;"></input>`
+        // );
+
+        // document.write(
+        //   ` <input  id="LogoutButton" type="submit" value = "Logout"onclick="Logout()" style = " position: relative; bottom:3px; padding: 5px 10px; margin-right: 150px; margin-top: 5px;" ></input>`
+        // );
+        // let Logout = document.getElementById("LogoutButton");
+        // Logout.addEventListener("click", () => {
+        //   localStorage.removeItem("email");
+        //   window.location.href = "login.html";
+        // });
+      </script>
+    </h2>
+
+    <div id="main">
+      <h2>Student Data Table</h2>
+
+      <form name="myForm" onsubmit="fun(event)">
+        Name: <input type="text" name="name1" id="name" /> <br />
+        <span id="error1"></span><br /><br />
+
+        Address: <input type="text" name="address1" id="address" /> <br />
+        <span id="error2"></span><br /><br />
+
+        Mobile Number:
+        <input type="number" name="number1" id="number" />
+        <br />
+        <span id="error3"></span><br /><br />
+
+        <button id="Addbtn" type="submit">Add Row</button>
+        <br /><br />
+      </form>
+      <button id="Logout" type="submit" onclick="Login()">Logout</button>
+    </div>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+  <script src="index.js"></script>
 </html>
