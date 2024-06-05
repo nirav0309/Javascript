@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud Operation Table</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div></div>
+    </header>
+
+    <div id="hero">
+      <div id="item-1">
+        <input type="text" id="search" placeholder="search-bar" onkeyup="searchItem()"/>
+        <!-- <input type="text" id="search" placeholder="search-bar" /> -->
+      </div>
+      <div id="item-2">
+        <button id="addDataBtn" onclick="addData()">Add Data</button>
+      </div>
+    </div>
+
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Gender</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody id="TableBody">
+        <!-- Data goes here dynamically -->
+      </tbody>
+    </table>
+
+    <!-- add/update data here dynamically -->
+
+    <div id="myModal1">
+      <form id="createForm">
+        <div id="Label1">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name1" />
+          <span id="error1"></span>
+        </div>
+        <div id="Label2">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email1" />
+          <span id="error2"></span>
+        </div>
+        <div id="Label3">
+          <label for="phone">Phone:</label>
+          <input type="number" name="phone" id="phone1" />
+          <span id="error3"></span>
+        </div>
+        <!-- <div id="Label4">
+          <label for="gender">Gender:</label><br />
+          <input type="radio" name="gender" id="male1" value="male" /> Male
+          <input type="radio" name="gender" id="male1" value="female" /> Female
+          <br />
+          <span id="error4"></span>
+        </div> -->
+        
+        <div id="Label4">
+          <label for="gender">Gender:</label><br />
+          <input type="radio" name="gender1" class="xyz1" value="male" /> Male
+          <input type="radio" name="gender1" class="xyz1" value="female" /> Female
+          <br />
+          <span id="error4"></span>
+        </div>
+
+        <br />
+        <button onclick="saveData()" type="button">Save Data</button>
+      </form>
+    </div>
+
+    <div id="myModal2">
+      <form id="updateForm">
+        <input type="text" id="studentId" hidden />
+        <div id="Label1">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name2" />
+          <span id="error11"></span>
+        </div>
+        <div id="Label2">
+          <label for="email">Email:</label>
+          <input type="text" name="email" id="email2" />
+          <span id="error22"></span>
+        </div>
+        <div id="Label3">
+          <label for="phone">Phone:</label>
+          <input type="number" name="phone" id="phone2" />
+          <span id="error33"></span>
+        </div>
+        <!-- <div id="Label4">
+          <label for="gender">Gender:</label><br />
+          <input type="radio" name="gender" id="male2" value="male" /> Male
+          <input type="radio" name="gender" id="female2" value="female" /> Female
+          <span id="error44"></span>
+        </div> -->
+
+        <div id="Label4">
+          <label for="gender">Gender:</label><br />
+          <input type="radio" name="gender2" class="xyz2" value="male" /> Male
+          <input type="radio" name="gender2" class="xyz2" value="female" /> Female
+          <br />
+          <span id="error4"></span>
+        </div>
+        <br />
+        <button onclick="UpdateData()" type="button">Update Data</button>
+      </form>
+    </div>
+    
+  </body>
+  <script src="index.js"></script>
+</html>
+
+<!-- when open edit form gender is not selected, and issue in search-bar -->
