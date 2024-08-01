@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>some text</h1>
+</body>
+<script>
+    const h1 =document.querySelector("h1")
+   const arr = ["value1", "value2", "value"]
+
+   h1.addEventListener("click", ()=>{
+    switch (h1.innerText) {
+        case arr[0]:
+            h1.innerText = arr[1]
+            break;
+        case arr[1]:
+            h1.innerText = arr[2]
+            break;
+    
+        default:
+            h1.innerText = arr[0]
+            break;
+    }
+   })
+
+</script>
+</html>

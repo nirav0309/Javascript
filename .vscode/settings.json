@@ -1,7 +1,6 @@
 {
-    "git.ignoreLimitWarning": true,
-    "livePreview.defaultPreviewPath": "/SET Object/set.html",
-    "cSpell.words": [
-        "trapranrent"
-    ]
+  "git.ignoreLimitWarning": true,
+  "livePreview.defaultPreviewPath": "/SET Object/set.html",
+  "cSpell.words": ["trapranrent"],
+  "liveServer.settings.port": 5501
 }
