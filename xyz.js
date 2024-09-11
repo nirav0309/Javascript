@@ -21,3 +21,36 @@
 //   }
 // }
 // myFun();
+
+
+// const array = Array.from({ length: 100 }, (item, index) => ({
+//   id: index + 1,
+//   name: `Item ${index + 1}`,
+// }));
+
+// function random(data, value) {
+//   const randomNumber = [...data].sort(() => 0.5 - Math.random());
+//   return randomNumber.slice(0, value);
+// }
+
+// const RandomItem = random(array, 5);
+// console.log(RandomItem);
+
+const generateRandomItems = (length) => {
+  let result = [];
+  const questionAnswerLength = questionAnswerData.length;
+
+  for (let i = 0; i < length; i++) {
+      let randomIndex;
+      
+    do {
+      randomIndex = Math.floor(Math.random() * questionAnswerLength);
+    } while (result.includes(questionAnswerData[randomIndex]));
+
+    result.push(questionAnswerData[randomIndex]);
+  }
+
+  return result;
+};
+
+console.log("myData.>>>>", generateRandomItems(5));

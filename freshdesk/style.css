@@ -1,0 +1,10 @@
+#custom_fc_button {
+  width: 10%;
+  position: fixed;
+  right: 1px;
+  bottom: 20px;
+}
+#imageicon {
+  height: 30%;
+  width: 30%
+}
